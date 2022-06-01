@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<style>
+			.container{
+				display: flex;
+			}
+			.col{
+				flex: 1;
+			}
+			.reveal .slides > section > section { text-align:left; }
+
+
+			</style>
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 style="width:95%; font-size: 2em;">Running around in circles</h1>
+					<h2 style="width:95%; font-size: 1em;padding-bottom: 3em;">why it isn't as useless as you first expect</h2>
+					<h4>James Arthur</h4>
+					<h6>EMF Camp 2022 | Friday 3rd June </h6>
+
+				</section>
+				<section>
+					<section><p style="width: 95%; font-size: 5em"> <b>PARKRUN</b></p></section>
+					<section>
+						<h1>What is Parkrun?</h1>
+						"parkruns are free, weekly, community events all around the world."
+					</section>
+					<section>
+						<h1 p class="r-fit-text">Running the alphabet</h1>
+						<ul>
+							<li class="fragment">I'm very dyslexic, I don't do letters</li>
+							<li class="fragment">I'm a mathematician, I like collections of things</li>
+							<li class="fragment">So I want to collect all of my least favourite things</li>
+							<li class="fragment">I'm a masochist</li>
+						</ul>
+					</section>
+					<section>
+						<p>I mentioned in the brief to this talk that I realised a miraculous truth about parkrun
+							during one of the events. This happened at my local, Heartlands. How many parkruns are possible?
+							Are they all really the same? They feel the same, you feel tired and your legs hurt and you need
+							a drink!
+						</p>
+					</section>
+					<section>
+						<h1 style="width:95%">How many parkruns are possible?</h1>
+						<p>Poll goes here</p>
+					</section>
+				</section>
+				<section>
+					<section data-auto-animate>
+						<h1>Homotopy</h1>
+						<p>(A squiggle is the same as another squiggle)</p>
+					</section>
+					<section data-auto-animate>
+						<video data-autoplay src="./videos/homotopy1.mp4"></video>
+					</section>
+					<section data-auto-animate>
+						<div class="container">
+
+							<div class="col">
+							A homotopy is a continuous map between two spaces. These spaces are just topological spaces, 
+							like the two on the right.
+							</div>
+							
+							<div class="col">
+								<video data-autoplay src="./videos/homotopy1.mp4"></video>
+							</div>
+				
+							</div>
+					</section>
+					<section data-auto-animate>
+						<div class="container">
+
+							<div class="col">
+							Formally, a homotopy is a continuous function between two topological spaces $X$ and $Y$ 
+							parameterised by some time value, $0 \le t \le 1$. 
+							$$ H : X \times [0, 1] \to Y $$
+							</div>
+							
+							<div class="col">
+								<video data-autoplay src="./videos/homotopy1.mp4"></video>
+							</div>
+				
+							</div>
+					</section>
+					<section>
+						We now ask, under what metric are two things similar? Well, we call spaces similar if they
+						have the same <b>fundemental group</b>.
+					</section>
+					<section>
+						Let us take some closed paths over the objects, that is we run around and take any path where we start 
+						and end at the same point. Then the fundemental group is the collection of all these different 
+						paths, up to homotopy. This has some sort of structure. This is what we call a group structure in maths. 
+					</section>
+					<section>
+						A group has an idea of addition. To add paths we just line them up end to end,
+						<video data-autoplay>
+							<source data-src="./videos/homotopy_add.mp4" type="video/webm" />
+						</video>
+					</section>
+					<section>Further, a group have the following structure,
+						<ul>
+							<li class="fragment">
+								<b>Closure</b> - Adding two paths makes another path.
+							</li>
+							<li class="fragment">
+								<b>Inverse</b> - to undo a path, run in the opposing direction
+							</li>
+							<li class="fragment">
+								<b>Identity</b> - do nothing. This like adding zero.
+							</li>
+							<li class="fragment">
+								A group also has <b>associativity</b>. That is, if you have three paths $p_1$, $p_2$ and $p_3$
+								then if you run $p_1$ then $p_2$ then $p_3$ that is the same as running $p_2$ then $p$
+							</li>
+						</ul>
+					</section>
+					<section>
+						<video data-autoplay src="./videos/FG.mp4"></video> <!-- I want to remove the background and have a reverse -->
+					</section>
+					<section>
+						The two paths of a circle are just running around in a forward direction and running around in a negative direction 
+						or doing nothing. Hence, we have the path $1$, forward, $-1$, backwards and $0$, do nothing. This 
+						forms a group. The fundemental group. This group is exactly the integers, $\mathbb{\Z} = \{0, \pm 1, \pm 2, \dots\}$.
+						Hence $\pi_1(S^1) = \mathbb{Z}$.
+					</section>
+				</section>
+				<section>
+					
+					<section>
+						<h1>The Siefert-Van Kampen Theorem</h1>
+						<aside class="notes">
+							We now introduce something that is a keystone idea in Algebraic Topology. The Siefert-Van Kampen Theorem.
+						</aside>
+					</section>
+					<section>
+						<ul>
+							<li>Wedge Sum</li>
+							<li class = "fragment">Siefert-Van Kampen</li>
+						</ul>
+					</section>
+					<section>
+						The wedge sum is defined as follows. Take two objects, then the wedge sum of these 
+						two objects is just the two objects touching at a point. If $X$ and $Y$ are spaces, the 
+						wedge sum is notated as,
+						$$ X \vee Y $$
+						
+						<center><img src="./photos/Wedge_of_Two_Circles.png" alt="The Wedge Sum of two circles"></center>
+					</section>
+					<section>
+						The Siefert-Van Kampen Theorem states that if we have space that is just a wedge sum, then the fundemental 
+						group is just <b>some</b> product of the fundemental groups of both spaces,
+						$$ \pi_1(X \vee Y) = \pi_1(X) * \pi_2(Y) $$
+					</section>
+					<section>
+						So, the fundemental group of a figure eight is,
+						$$ \pi_1(S^1 \vee S^1) = \pi_1(S^1) * \pi_1(S^1) = \mathbb{Z} * \mathbb{Z} $$
+					</section>
+					<section>
+						<video data-autoplay src="./videos/figureEight.mp4"></video>
+					</section>
+					<section>
+						The fundemental group of a figure eight has four elements: $0$, do nothing, $A$ go around the left
+						lobe, $B$ go around the right lobe and $X$ go around the whole figure. This is the free group on 
+						two characters, we denote this as,
+						$$ \langle A, B \rangle. $$
+					</section>
+					<section>
+						We call the figure of eight, the 2-rose (a rose with two petals). If we consider roses with more petals, which
+						parkruns usually are, we are going to have,
+						$$ \begin{align*} \pi_1 (S^1 \vee S^1 \vee \dots \vee S^1) &= \pi_1(S^1) * \pi_1(S^1) * \dots * \pi_1(S^1) \\ &= \mathbb{Z} * \mathbb{Z} * \dots * \mathbb{Z} \end{align*}. $$ 
+						This then becomes the free group on $n$ letters.
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>ASIDE: COVERING SPACES</h1>
+					</section>
+					<section>
+						Here's a thing. You usually go around a track more than once on Parkrun, does this affect things?
+						The answer is, it doesn't. You may ask me why? That's because of something we call covering spaces.
+						<center><img src="./photos/coveringSpace.png" alt="A photo of the covering space"></center>
+					</section>
+					<section>
+						Take your parkrun course and look at it as a slinky. When you pull it upwards you see something very similar to 
+						the image on the last page. Now cut the slinky at the start of the course (if it overlaps) and then you will have 
+						a few copies of one lap of the course. We are interested in the shape of a lap and so it doesn't matter!
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>THERE ARE ONLY $N$ PARKRUN COURSES!</h1>
+					</section>
+					<section>
+						We are going to consider some parkrun courses up to homotopy. Here are some of the different parkrun courses, 
+					</section>
+					<section>
+						The non-closed loop. Here we have a loop that contracts just back to a point. An example of this is my favourite 
+						parkrun, Penrose Estate. 
+						<center><img style="width: 40%" src="./photos/PenrosePR.png" alt="The track of penrose parkrun"></center>
+					</section>
+					<section>
+						<video data-autoplay src="./videos/PenrosePR.mp4"></video>
+					</section>
+					<section>
+						A non-overlapping loop. This is *just* a circle. An example of this is Gunnersbury Parkrun,
+						<center><img src="./photos/Gunnersbury.png" alt="The Gunnersbury parkrun route."></center>
+					</section>
+					<section>
+						<video data-autoplay src="./videos/gunnersburyWhite.mp4"></video>
+					</section>
+					<section>
+						One crossing loop. This is a figure 8. An example of this is Heartlands Parkrun, my home parkrun. 
+						<center><img style="width: 40%" src="./photos/Heartlands.png" alt="The Heartlands parkrun route"></center>
+					</section>
+					<section>
+						Two crossing loop. This is a 3-rose. I have two nice examples here. Durlston Parkrun and The Forest of Dean
+						parkrun. Firstly Durlston,
+						<center><img style="width: 20%; " src="./photos/triPR1.png" alt="The route of Durlston Parkrun"></center>
+					</section>
+					<section>
+						<video data-autoplay src="./videos/DurlstonPR.mp4"></video>
+					</section>
+					<section>
+						and the Forest of Dean Parkrun,
+						<center><img style="width: 60%" src="./photos/triPR2.png" alt=""></center></span>
+					</section>
+					<section>
+						<video data-autoplay src="./videos/FoDPR.mp4"></video>
+					</section>
+					<section>
+						This is where you come in. Is there a parkrun with three crossings? I checked for two hours and couldn't 
+						find one. However, your parkrun may have one. If so, speak now. If not, I behold that there are only three 
+						parkruns, $N=3$!
+					</section>
+				</section>
+				<section>
+					<section><h1>Conclusion</h1></section>
+					<section>
+						We have (very quickly) learnt about Algebraic Topology, one of my favourite parts of Maths. We have seen the 
+						fundemental group and briefly seen the free product and free group. Here are a few conclusions,<br>
+
+						<ul>
+							<li class="fragment">Maths is fun! It's not just sums.</li>
+							<li class="fragment">The fundemental group is whacky</li>
+							<li class="fragment">James doesn't like crunching data</li>
+							<li class="fragment">James really need to learn blender.</li>
+						</ul>
+					</section>
+					<section>
+						Come back to the Maths Tent for more topology chats about this and knots.
+						<center><img style="width: 30%" src="./photos/KwalityMap.JPG" alt="A map of EMF with arrows pointing to Workshop 5"></center>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber:true,
+				animate: {
+					autoplay: true,
+				},
+				width: "100%",
+				height: "100%",
+				margin: 0.1,
+
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
