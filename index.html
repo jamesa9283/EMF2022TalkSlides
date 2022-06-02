@@ -14,7 +14,8 @@
 		<meta name='twitter:title' content="Running around in circles, and why it isn`t as useless as you first expect." />
 		<meta property='og:description' content='My slides for EMF2022 on the fundemental group and why most parkruns are the same.' />
 		<meta property='twitter:description' content='My slides for EMF2022 on the fundemental group and why most parkruns are the same.' />	
-		<meta property='og:image' content='./photos/thumb.png' /><meta property='twitter:image' content='./photos/thumb.png' /><meta property='og:type' content='article' />            <meta property='twitter:site' content='@alephJamesA'>
+		<meta property='og:image' content='./photos/thumb.png' /><meta property='twitter:image' content='./photos/thumb.png' />
+		<meta property='og:type' content='article' />            <meta property='twitter:site' content='@alephJamesA'>
         <meta name='twitter:creator' content='@alephJamesA'/>
         <meta property='og:url' content='https://alephJamesA.co.uk' />
         <meta name='theme-color' content='#FF0000'>        
@@ -138,8 +139,9 @@
 								<b>Identity</b> - do nothing. This like adding zero.
 							</li>
 							<li class="fragment">
-								A group also has <b>associativity</b>. That is, if you have three paths $p_1$, $p_2$ and $p_3$
-								then if you run $p_1$ then $p_2$ then $p_3$ that is the same as running $p_2$ then $p$
+								A group also has <b>associativity</b>. This is a property that means, basically if you are adding 
+								three things together, it doesn't matter if you add the first two to the third or the last two to 
+								the first. Think, $1 + (2 + 3) = (1 + 2) + 3$.
 							</li>
 						</ul>
 					</section>
@@ -194,9 +196,19 @@
 						$$ \langle A, B \rangle. $$
 					</section>
 					<section>
+						You may ask what sort of things live in $\langle A, B\rangle$. The answer is just algebraic messes of $A$'s 
+						and $B$'s. So the following are all in $\langle A, B \rangle$,
+						$$ AB \qquad AB^{-1}A \qquad A^2B^{-3}ABA^{-5} $$
+
+						I accentuate that $AB \neq BA$ and so $ABA^{-1} \neq B$.
+					</section>
+					<section>
+						<center><img style="width: 70%;" src="./photos/Wedge_of_Two_Circles.png" alt="A figure eight."></center>
+					</section>
+					<section>
 						We call the figure of eight, the 2-rose (a rose with two petals). If we consider roses with more petals, which
 						parkruns usually are, we are going to have,
-						$$ \begin{align*} \pi_1 (S^1 \vee S^1 \vee \dots \vee S^1) &= \pi_1(S^1) * \pi_1(S^1) * \dots * \pi_1(S^1) \\ &= \mathbb{Z} * \mathbb{Z} * \dots * \mathbb{Z} \end{align*}. $$ 
+						$$ \begin{align*} \pi_1 (S^1 \vee S^1 \vee \dots \vee S^1) &= \pi_1(S^1) * \pi_1(S^1) * \dots * \pi_1(S^1) \\ &= \mathbb{Z} * \mathbb{Z} * \dots * \mathbb{Z}. \end{align*} $$ 
 						This then becomes the free group on $n$ letters.
 					</section>
 				</section>
@@ -276,7 +288,7 @@
 						</ul>
 					</section>
 					<section>
-						Come back to the Maths Tent for more topology chats about this and knots.
+						Come back to the Maths Tent for more topology chats about this and (maybe) some knot theory.
 						<center><img style="width: 30%" src="./photos/KwalityMap.JPG" alt="A map of EMF with arrows pointing to Workshop 5"></center>
 					</section>
 				</section>
